@@ -1,1 +1,1 @@
-# Tech-Interview-Study
+# Tech Study for Developer
