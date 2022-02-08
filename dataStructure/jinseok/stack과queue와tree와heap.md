@@ -27,7 +27,7 @@
 
  
 
-\[\#\#\_Image|kage@uvu71/btrsSvxJweN/gTTYe95HRFejIchykaxlbk/img.png|CDM|1.3|{"originWidth":1024,"originHeight":736,"style":"alignCenter","width":430,"height":309,"caption":"https://ko.wikipedia.org/wiki/%EC%8A%A4%ED%83%9D","filename":"stack.png"}\_\#\#\]
+![img](https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Data_stack.svg/450px-Data_stack.svg.png)
 
 ####  
 
@@ -97,7 +97,7 @@ queue도 stack처럼 매우 직관적인 이름을 가지고 있다. '줄을 서
 
  
 
-\[\#\#\_Image|kage@ok1Er/btrsMec1UYY/xEKAmbLKjvShRfZKuqjhAK/img.png|CDM|1.3|{"originWidth":2000,"originHeight":1309,"style":"alignCenter","width":430,"height":281,"caption":"https://namu.wiki/w/%ED%81%90(%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0)","filename":"b7785ff70f623fedbcae126015a3ae0a18b2f3a785bdd691d803aad2b10aee91f7b3fc438aadd3676cb84b9608ac18c4ce4dcc9a35eed34a61a2ffffff9b56ebae203b4dbe4bf8d8be10e33abea1cdab0983fe92dc2c795396b92509b8531e56.png"}\_\#\#\]
+![img](https://ww.namu.la/s/b7785ff70f623fedbcae126015a3ae0a18b2f3a785bdd691d803aad2b10aee91f7b3fc438aadd3676cb84b9608ac18c4ce4dcc9a35eed34a61a2ffffff9b56eb2690d1ecbc99f7aa87a3e5387dfb8c90)
 
 #### **queue의 특징**
 
@@ -138,7 +138,7 @@ VIP 제도가 있는 대기열 라인, 원형큐는 대기라인 수의 제한�
 
  
 
-\[\#\#\_Image|kage@cQvB1b/btrsSbTTogp/W2ZPLoD8TP3Vr6Tw4i4Pr0/tfile.svg|CDM|1.3|{"originWidth":300,"originHeight":250,"style":"alignCenter","width":340,"height":283,"caption":"https://ko.wikipedia.org/wiki/%ED%8A%B8%EB%A6%AC\_%EA%B5%AC%EC%A1%B0","filename":"트리.svg"}\_\#\#\]
+![img](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Binary_tree.svg/300px-Binary_tree.svg.png)
 
  
 
@@ -193,7 +193,7 @@ Heap), 노드가 가장 작은 값을 가지는 최소 힙(Min Heap)이 존재�
 
  
 
-\[\#\#\_Image|kage@bQBUNB/btrsMz2QUZd/MS4lYEJLHkNxAXKzZW8da0/img.png|CDM|1.3|{"originWidth":800,"originHeight":960,"style":"alignCenter","width":400,"height":480,"caption":"https://ko.wikipedia.org/wiki/%ED%9E%99\_(%EC%9E%90%EB%A3%8C\_%EA%B5%AC%EC%A1%B0)","filename":"glq.png"}\_\#\#\]
+![img](https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Max-Heap.svg/800px-Max-Heap.svg.png)
 
  
 
@@ -219,103 +219,10 @@ Heap), 노드가 가장 작은 값을 가지는 최소 힙(Min Heap)이 존재�
 
 <https://velog.io/@wjdqls9362/Algorithm-Binary-Heap-%EC%9D%B4%EC%A7%84-%ED%9E%99> 
 
-[](https://velog.io/@wjdqls9362/Algorithm-Binary-Heap-%EC%9D%B4%EC%A7%84-%ED%9E%99)
-
-<div class="og-image" style="background-image: url(&#39;https://scrap.kakaocdn.net/dn/bj5hJI/hyNmAxZJDa/35jhGtrAJotthj9i7IVRH0/img.png?width=950&amp;height=500&amp;face=0_0_950_500&#39;);">
-
- 
-
-</div>
-
-<div class="og-text">
-
-\[Algorithm\] Binary Heap (이진 힙)
-
-이진 힙에 알고리즘에 대해서 학습한다.Binary Heap(이진 힙) 은 노드의 값이 특정한 순서를 가지고 있는 완전 이진
-트리(Complete Binary Tree)다.완전 이진 트리는 마지막 레벨을 제외하고 모든 이진 트
-
-velog.io
-
-</div>
-
 <https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html>
-
-[](https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html)
-
-<div class="og-image" style="background-image: url();">
-
- 
-
-</div>
-
-<div class="og-text">
-
-\[자료구조\] 힙(heap)이란 - Heee's Development Blog
-
-Step by step goes a long way.
-
-gmlwjd9405.github.io
-
-</div>
 
 <https://gmlwjd9405.github.io/2018/08/12/data-structure-tree.html>
 
-[](https://gmlwjd9405.github.io/2018/08/12/data-structure-tree.html)
-
-<div class="og-image" style="background-image: url();">
-
- 
-
-</div>
-
-<div class="og-text">
-
-\[자료구조\] 트리(Tree)란 - Heee's Development Blog
-
-Step by step goes a long way.
-
-gmlwjd9405.github.io
-
-</div>
-
 <https://wayhome25.github.io/cs/2017/04/19/cs-23/>
 
-[](https://wayhome25.github.io/cs/2017/04/19/cs-23/)
-
-<div class="og-image" style="background-image: url();">
-
- 
-
-</div>
-
-<div class="og-text">
-
-강의노트 22. 자료구조 - tree(트리), heap(힙) · 초보몽키의 개발공부로그
-
-패스트캠퍼스 컴퓨터공학 입문 수업을 듣고 중요한 내용을 정리했습니다. 개인공부 후 자료를 남기기 위한 목적임으로 내용 상에 오류가
-있을 수 있습니다.
-
-wayhome25.github.io
-
-</div>
-
 <https://ddunnimlabs.tistory.com/104>
-
-[](https://ddunnimlabs.tistory.com/104)
-
-<div class="og-image" style="background-image: url(&#39;https://scrap.kakaocdn.net/dn/c0oKz3/hyNlqjtHER/r14a775oojJXthqbsAEtoK/img.png?width=371&amp;height=664&amp;face=0_0_371_664,https://scrap.kakaocdn.net/dn/bD614Q/hyNmz6U2ew/6Jv7JIkEl1AYMSwt1PKYk0/img.png?width=371&amp;height=664&amp;face=0_0_371_664,https://scrap.kakaocdn.net/dn/dXn8AZ/hyNmI3RvAM/leVLo4mjutldQeL3Km39dK/img.png?width=1013&amp;height=437&amp;face=0_0_1013_437&#39;);">
-
- 
-
-</div>
-
-<div class="og-text">
-
-Stack , Queue, Heap 의 구조와 메모리 영역에 대한 이해
-
-최근들어 프로그래밍에 알고리즘과 자료구조의 중요성을 느낀다. 확실히 한단계 더 높은 개발자가 되려면 기초가 중요하고 알고리즘과
-자료구조의 중요성이 더욱 강해지는 것 같다.. 주변 개발
-
-ddunnimlabs.tistory.com
-
-</div>
