@@ -1,6 +1,6 @@
 # Data Strucure
 
-### Q. ArrayList와 LinkedList의 차이점
+## Q. ArrayList와 LinkedList의 차이점
 
 <details>
   <summary>Answer</summary>
@@ -30,14 +30,14 @@ ArrayList는 순서를 유지하며 데이터를 관리하기 때문에 빠른 �
 ### LinkedList
   
 - LinkedList는 양방향 연결 리스트 구조로 되어있다.(자신의 앞, 뒤 노드를 가르키는 링크를 가지고 있다.)
-- 따라서 데이터가 추가 시 마지막  .
-- LinkedList는 양방향 연결 리스트 구조로 되어
-
+- 따라서 데이터가 추가 된다면, 마지막 노드의 next link를 새롭게 추가 된 노드와 연결하고, 새롭게 추가 된 노드의 prev link를 마지막 노드와 연결해주면 끝이다.
+- 삭제도 마찬가지로 자신의 앞, 뒤 데이터를 가르키는 Link Filed만 변경해주면 된다.
+- 하지만 데이터가 순차적으로 저장되어 있지 않기 때문에, index를 통한 접근이 불가능하다. 따라서 데이터를 찾기 위해서는 첫번째 데이터부터 순차탐색을 해야한다.
 
 
 </details>
 
-### Q. Hash 란?
+## Q. Hash 란?
 
 <details>
   <summary>Answer</summary>
@@ -52,7 +52,7 @@ ArrayList는 순서를 유지하며 데이터를 관리하기 때문에 빠른 �
 
 </details>
 
-### Q. 이진 트리란?
+## Q. 이진 트리란?
 
 <details>
   <summary>Answer</summary>
@@ -68,7 +68,7 @@ ArrayList는 순서를 유지하며 데이터를 관리하기 때문에 빠른 �
 </details>
 
 
-### Q. sample?
+## Q. sample?
 
 <details>
   <summary>Answer</summary>
