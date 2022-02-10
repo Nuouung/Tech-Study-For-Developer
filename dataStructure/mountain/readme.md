@@ -39,18 +39,37 @@ ArrayList는 순서를 유지하며 데이터를 관리하기 때문에 빠른 �
 
 </details>
 
-## Q. Hash 란?
+## Q. HashTable 이란?
 
 <details>
   <summary>Answer</summary>
+Key와 Value로 데이터를 저장하는 자료구조. HashTable은 Key값에 해시함수를 적용해 고유한 index(주소 값)을 지정할 수 있다. 따라서 한 번의 해쉬함수만을 수행하여 빠르게 데이터를 조회, 삭제, 저장할 수 있다.
+  
 </details>
 <details>
   <summary>정리</summary>
 
 ### Reference
+[링크1 - 망나니개발자 블로그](https://mangkyu.tistory.com/102)
   
 ### 내용
+<img width="302" alt="image" src="https://user-images.githubusercontent.com/26343023/153461185-b8809191-d63e-48f6-8484-ec21cf2592ed.png">
 
+### 해시 함수의 결과가 같은 경우?
+  
+- 이와 같은 경우를 `해시 충돌`이라고 한다.
+- `해시 충돌`이 
+ㄷㅂㅏㄹ
+ㄷ
+  
+  
+### 해시테이블 시간복잡도
+  
+
+  
+### Java에서 HashMap 과 HashTable 차이
+
+HashTable은 Thread-Safe하다, synchronized 키워드를 사용해 멀티 쓰레드 환경에서 안전하게 사용할 수 있다. 반면 HashMap은 동기화에 대한 고려를 하지 않기 때문에, 멀티쓰레드 환경에서 사용할 시 문제가 발생할 수 있다.
 
 </details>
 
