@@ -50,7 +50,9 @@ Key와 Value로 데이터를 저장하는 자료구조. HashTable은 Key값에 �
   <summary>정리</summary>
 
 ### Reference
-[링크1 - 망나니개발자 블로그](https://mangkyu.tistory.com/102)
+- [링크1 - 망나니개발자 블로그](https://mangkyu.tistory.com/102)
+- [링크2 - HashTable vs ConcurrentHashMap](https://roynus.tistory.com/672)
+- [링크3 - HashTable vs ConcurrentHashMap](https://stackoverflow.com/questions/12646404/concurrenthashmap-and-hashtable-in-java)
   
 ### 내용
 <img width="302" alt="image" src="https://user-images.githubusercontent.com/26343023/153461185-b8809191-d63e-48f6-8484-ec21cf2592ed.png">
@@ -58,18 +60,31 @@ Key와 Value로 데이터를 저장하는 자료구조. HashTable은 Key값에 �
 ### 해시 함수의 결과가 같은 경우?
   
 - 이와 같은 경우를 `해시 충돌`이라고 한다.
-- `해시 충돌`이 
-ㄷㅂㅏㄹ
-ㄷ
-  
-  
+- 해시 충돌이 발생한 경우 기존의 value를 저장하고 있는 메모리 공간 뒤에 이어 붙여서 해결할 수 있다.
+  - 같은 key에 데이터가 연속적으로 저장된다.
+  - 해시테이블의 확장이 필요없이 간단하게 구현이 가능하다. 하지만 같은 key에 대한 충돌이 자주발생하면 그만큼 탐색속도가 떨어지게 된다.
+  - 이를 `분리 연결법(Separate Chaining)`이라 한다.
+- 또는, 해시 테이블의 비어있는 공간에 채워넣는 방법도 있다.
+  - 특정 규칙에 따라 테이블의 빈공간을 찾아가면서 값을 저장하게 된다.
+  - 이는 `개방 주소법(Open Addressing)` 이라 한다.
+  - 개방 주소법으로 저장할 때, 삭제 된 공간은 Dummy Space로 활용되기 때문에 HashTable의 공간을 재정렬 해주는 작업이 필요하다.(클러스터링 작업이 필요하다.)
+
 ### 해시테이블 시간복잡도
-  
 
+- 평균 적으로 O(1)의 시간을 가진다.
+- 하지만 분리 연결법으로 저장되어 있는 경우, Chaining되어 있는 데이터를 찾아가면서 O(N)까지 속도가 저하될 수 있다.
   
-### Java에서 HashMap 과 HashTable 차이
+  
+### Java에서 HashMap vs HashTable vs ConcurrentHashMap
 
-HashTable은 Thread-Safe하다, synchronized 키워드를 사용해 멀티 쓰레드 환경에서 안전하게 사용할 수 있다. 반면 HashMap은 동기화에 대한 고려를 하지 않기 때문에, 멀티쓰레드 환경에서 사용할 시 문제가 발생할 수 있다.
+- HashTable은 Thread-Safe하다, synchronized 키워드를 사용해 멀티 쓰레드 환경에서 안전하게 사용할 수 있다. 반면 HashMap은 동기화에 대한 고려를 하지 않기 때문에, 멀티쓰레드 환경에서 사용할 시 문제가 발생할 수 있다.
+- ConcurrentHashMap도 Thread-Safe하다. 
+- ConcurrentHashMap과 HashTable는 성능에서 차이가 난다. ConcurrentHashMap이 더 빠르다.
+  - HashTable은 synchronized 키워드로 메소드 전체에 락을건다. 즉, HashTable 객체를 참조하는 쓰레드가 많아지면 그만큼 대기시간이 길어질 수 밖에 없다.
+  - 반면 ConcurrentHashMap는 내부적으로 여러 개의 세그먼트를 두고 각 세그먼트마다 Lock을 가진다.
+    - 때문에 여러 쓰레드에서 ConcurrentHashMap객체에 동시에 데이터를 삽입, 참조하더라도 다른 세그먼트에 위치하면 서로 경쟁하지 않는다.
+    - 이런 방법을 Lock Striping이라고 한다. (역역을 나누고, 그 영역마다 다른 락으로 동기화 하는 방법)
+ 
 
 </details>
 
