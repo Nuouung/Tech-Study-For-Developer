@@ -83,7 +83,7 @@ Key와 Value로 데이터를 저장하는 자료구조. HashTable은 Key값에 �
   - HashTable은 synchronized 키워드로 메소드 전체에 락을건다. 즉, HashTable 객체를 참조하는 쓰레드가 많아지면 그만큼 대기시간이 길어질 수 밖에 없다.
   - 반면 ConcurrentHashMap는 내부적으로 여러 개의 세그먼트를 두고 각 세그먼트마다 Lock을 가진다.
     - 때문에 여러 쓰레드에서 ConcurrentHashMap객체에 동시에 데이터를 삽입, 참조하더라도 다른 세그먼트에 위치하면 서로 경쟁하지 않는다.
-    - 이런 방법을 Lock Striping이라고 한다. (역역을 나누고, 그 영역마다 다른 락으로 동기화 하는 방법)
+    - 이런 방법을 Lock Striping이라고 한다. (영역을 나누고, 각 영역마다 다른 Lock으로 동기화 하는 방법)
  
 
 </details>
