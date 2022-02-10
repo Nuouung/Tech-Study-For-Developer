@@ -47,7 +47,7 @@ Key와 Value로 데이터를 저장하는 자료구조. HashTable은 Key값에 �
   
 </details>
 <details>
-  <summary>정리</summary>
+  <summary>이해하기</summary>
 
 ### Reference
 - [링크1 - 망나니개발자 블로그](https://mangkyu.tistory.com/102)
@@ -94,9 +94,10 @@ Key와 Value로 데이터를 저장하는 자료구조. HashTable은 Key값에 �
   <summary>Answer</summary>
 </details>
 <details>
-  <summary>정리</summary>
+  <summary>이해하기</summary>
 
 ### Reference
+- 
   
 ### 내용
 
