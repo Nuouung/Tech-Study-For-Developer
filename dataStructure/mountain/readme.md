@@ -15,6 +15,7 @@ ArrayList는 순서를 유지하며 데이터를 관리하기 때문에 빠른 �
 - [링크1](https://www.hanbit.co.kr/channel/category/category_view.html?cms_code=CMS4973879534)
 - [링크2](https://github.com/gyoogle/tech-interview-for-developer/blob/master/Computer%20Science/Data%20Structure/Array%20vs%20ArrayList%20vs%20LinkedList.md)
 - [링크3 with Code](https://devlog-wjdrbs96.tistory.com/64)
+- [Doubly Linked List](https://opentutorials.org/module/1335/8940)
   
 ## 내용
 ![image](https://user-images.githubusercontent.com/26343023/153250402-59f69b24-6d9d-494d-a9a2-c224bbbf7274.png)
@@ -28,6 +29,8 @@ ArrayList는 순서를 유지하며 데이터를 관리하기 때문에 빠른 �
 
   
 ### LinkedList
+![image](https://user-images.githubusercontent.com/26343023/153390516-1562e85e-f70f-4385-9a4b-5b65ceb0297a.png)
+
   
 - LinkedList는 양방향 연결 리스트 구조로 되어있다.(자신의 앞, 뒤 노드를 가르키는 링크를 가지고 있다.)
 - 따라서 데이터가 추가 된다면 마지막 노드의 next link를 새롭게 추가 된 노드와 연결하고, 새롭게 추가 된 노드의 prev link를 마지막 노드와 연결해주면 끝이다.
