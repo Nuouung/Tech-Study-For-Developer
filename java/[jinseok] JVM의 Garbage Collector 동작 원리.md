@@ -1,4 +1,13 @@
-## 일러두기
+## 일러두기1
+
+블로그 게시글로 보시면 더욱 쾌적한 UI를 경험하실 수 있습니다. 
+
+
+[블로그 게시글로 가기](https://gaebalsogi.tistory.com/64)
+
+
+## 일러두기2
+
 
 본 글은 유튜브 우아한Tech의 [\[10분 테코톡\] 👌던의 JVM의 Garbage
 Collector](https://www.youtube.com/watch?v=vZRmCbl871I&t=744s)와 망나니개발자님의
@@ -110,8 +119,7 @@ Generation은 다시 Eden, Survivor 0, Survival 1으로 나눌 수 있다. 아�
 
  
 
-\[\#\#\_Image|kage@b45rpO/btrtlqQk4m2/htrOvs6B3ixSp4UpY2lWtk/img.jpg|CDM|1.3|{"originWidth":822,"originHeight":253,"style":"alignCenter","caption":"http://www.waitingforcode.com/off-heap/on-heap-off-heap-storage/read","filename":"화면
-캡처 2022-02-14 164652.jpg"}\_\#\#\]
+![img](http://www.waitingforcode.com/off-heap/on-heap-off-heap-storage/read)
 
  
 
