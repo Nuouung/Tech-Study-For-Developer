@@ -232,3 +232,25 @@ String은 불변 객체이며, String Buffer는 멀티 스레드 환경에서 th
 * 저 정도로는 답변해야 하지 않을까 ?
 
 </details>
+
+# Q. 클래스, 객체, 인스턴스 차이
+
+<details>
+	<summary>Answer</summary>
+
+* 클래스는 붕어빵 틀, 객체는 붕어빵, 인스턴스는 틀로 찍어낸 각각의 붕어빵.
+* 클래스는 설계도, 틀을 의미한다.
+* 객체는 소프트웨어 세계에 구현할 대상. `클래스의 인스턴스` 라고도 부른다.
+	* 객체는 모든 인스턴스를 대표하는 포괄적 의미를 가진다.
+* 인스턴스는 `실제 구현된 구체적 실체`이다.
+
+</details>
+
+<details>
+	<summary>이해하기</summary>
+
+## Reference
+* [자바, Java 클래스(class), 객체(object), 인스턴스(instance) 차이](https://computer-science-student.tistory.com/319)
+  
+
+</details>
