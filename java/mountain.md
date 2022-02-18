@@ -254,3 +254,69 @@ String은 불변 객체이며, String Buffer는 멀티 스레드 환경에서 th
   
 
 </details>
+
+# Q. Garbage Collection 에 대해 설명해 주세요
+<details>
+	<summary>Answer</summary>
+
+* Java에서 Garbage Collectior이란 동적 메모리 관리를 처리 해주는 하나의 쓰레드를 의미합니다.
+* 따라서, GC이 동작할 때는 stop-the-world가 발생하고, 이는 나머지 작업들이 멈추게 되는 현상을 의미합니다.
+* Garbage Collection은 지속적인 튜닝과 모니터링을 통해 해당 서비스에 가장 적합한 값을 찾는다면, 어플리케이션의 성능을 높일 수 있습니다.
+
+</details>
+
+<details>
+	<summary>이해하기</summary>
+
+## Reference
+* [NAVER D2](https://d2.naver.com/helloworld/1329)
+* [tech-refrigerator/Garbage Collection.md at master · GimunLee/tech-refrigerator · GitHub](https://github.com/GimunLee/tech-refrigerator/blob/master/Language/JAVA/Garbage%20Collection.md#garbage-collection)
+  
+## 내용
+
+### Garbage Collection 의 처리 대상
+	1. 객체가 Null일 때
+	2. 블록이 종료었을 때, 블록안에서 생성된 객체
+	3. 부모 객체가 Null일 때, 포함관계의 자식 객체
+
+### Garbage Collection의 메모리 해제 과정
+
+> Marking -> Normal Deletion -> Compacting의 과정을 거친다.
+
+#### Marking
+* 모든 오브젝트를 스캔해서, GC메모리가 사용되는지 확인한다.
+
+#### Normal Deletion
+* 참조되지 않는 객체를 제거하고, 메모리를 반환
+* 반환되어 비어진 블록의 위치는 Allocator가 저장해 두었다가, 새로운 오브젝트가 선언되면 할당한다.
+
+#### Compacting
+* 성능 향상을 위해, 참조되지 않는 객체를 제거한 후, 남은 객체를 압축하여 메모리 공간을 확보한다.
+
+### Generation Garbage Collection
+
+> Mark & Compact 방식은 비효율 적이다.
+> 프로그램은 대체로 처음에 많은 공간을 사용하고, 시간이 지날수록 적은 객체만 사용한다.
+
+<img width="350" alt="java-gc-004" src="https://user-images.githubusercontent.com/26343023/154737452-2489a911-cff4-4ee4-97cd-117c92530fdb.png">
+
+* 이러한 현상을 멋지게 `Weak Generational Hypothesis` 라고 한다.
+* `Weak Generational Hypothesis` 는 새롭게 만든 객체는 금방 사용하지 않는 상태가되고, 오래살아남은 객체는 신규객체를 참조하는 경우가 매우 드물다는 가설이다.
+* 이 가설에 기반해 자바는 Young영역과 Old영역으로 메모리를 분할하고, 신규 생성 객체는 Young, 오래 살아남은 객체는 Old에 구분하여 보관한다.
+* Young영역에서의 GC발생을 MinorGC
+* Old 영역에서의 GC 발생을 Major GC(혹은 Full GC)라고 한다.
+
+
+> 핵심은, 메모리 공간을 나누어서 Marking의 범위를 최소화 하는 것 같다…
+
+<img width="350" alt="java-gc-006" src="https://user-images.githubusercontent.com/26343023/154737464-7b258467-b4f4-48d0-9b42-1b730a386ee5.png">
+	
+* Eden Space가 차기전에는 GC가 발생하지 않는다.
+* Eden Space가 가득차면 GC가 발생하고, 살아남은 객체는 S0으로 이동. 비 참조 객체는 clear !
+* 이런식으로 공간을 나누고, 살아남는 객체는 S0, S1에 관리한다.
+* Survivor Space에 오래살아남는 객체는 MinorGC가 발생할 때마다 Aged(나이를 증가) 시키며 관리한다.
+* 객체의 나이가 기준을 넘어서게 될 때, Old Generation으로 이동된다.
+* 프로그램이 동작하면서, Young영역이 부족해 진다면, 결국 Marking의 범위는 OldGeneration까지 확장되어 당연히 Stop-the-world가 오래 발생하게 된다.
+
+
+</details>
