@@ -320,3 +320,88 @@ String은 불변 객체이며, String Buffer는 멀티 스레드 환경에서 th
 
 
 </details>
+
+# Java는 Call By Reference 인가 Call By Value 인가?
+<details>
+	<summary>Answer</summary>
+
+* Call By Value
+* 값을 복사해서 던진다. 따라서 전달받은 값을 변경해도 원본은 변경되지 않는다.
+* 참조 변수의 경우에는 주소값을 복사해서 던진다.
+	* 따라서 외부에서 값을 변경할 수 있다.
+
+</details>
+
+<details>
+	<summary>이해하기</summary>
+
+## Reference
+* [Java Java는 Call by reference가 없다](https://deveric.tistory.com/92) 
+
+</details>
+
+# Q. 예외처리(CheckedException , UnCheckedException)
+<details>
+	<summary>Answer</summary>
+
+![2019-03-02-java-checked-unchecked-exceptions-1](https://user-images.githubusercontent.com/26343023/154745663-6e74bfeb-4b33-4571-8606-5866b9b6e14b.png)
+
+	
+* Checked Exception
+	* RuntimeExcetipn을 상속하지 않는 클래스
+
+
+* UnChecked Exception
+	* Error와 RuntimeException을 상속한 예외 클래스를 의미
+
+![2019-03-02-java-checked-unchecked-exceptions-2](https://user-images.githubusercontent.com/26343023/154745652-8168b724-1164-4311-9f1b-c39ae5ea65a8.png)
+
+</details>
+
+<details>
+	<summary>이해하기</summary>
+
+## Reference
+[자바 예외 구분: Checked Exception, Unchecked Exception](https://madplay.github.io/post/java-checked-unchecked-exceptions)
+  
+## 내용
+
+### Error
+* 비정상적인 상황이 발생한 경우, 주로 JVM에서 발생 한다.
+* Error는 애플리케이션 코드에서 잡으면 안된다. 
+	* Error = 잘못된 사용 혹은 문제를 의미
+* OutOfMemoryError, ThreadDeath, StackOverflowError등이 존재한다.
+
+### Exception
+* 정상적인 흐름을 벗어나는 경우, 개발자가 상황을 예측하고 핸들링할 수 있다.
+
+</details>
+
+
+# Q. interface와 abstract class차이
+<details>
+	<summary>Answer</summary>
+
+* 이건 아직 명확히 이해가 안되었다. 정리 더 필요…
+
+* 추상클래스는 IS -A “~이다”
+	* 공통된 기능을 사용할 때 사용할 수 있다.
+	* 추상 클래스는 클래스이다. 따라서 다중 상속이 불가능하다.
+	* 추상클래스를 상속한 구현 클래스의 상속관계를 따라가면 모두 공통된 기능을 수행한다.
+* 인터페이스는 HAS -A “_ 을 할 수 있는”
+	* 확장의 의미를 가진다.
+	* ~able
+	* 인터페이스는 다중 구현이 가능하다.
+
+
+</details>
+
+<details>
+	<summary>이해하기</summary>
+
+## Reference
+[JAVA 추상클래스 VS 인터페이스 왜 사용할까? 차이점, 예제로 확인 :: 마이자몽](https://myjamong.tistory.com/150)
+  
+## 내용
+
+</details>
