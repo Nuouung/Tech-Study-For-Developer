@@ -405,3 +405,58 @@ String은 불변 객체이며, String Buffer는 멀티 스레드 환경에서 th
 ## 내용
 
 </details>
+
+# Q. 자바 1.8 버전에서 새롭게 추가된 주요 Feature에 대해 설명해 주세요
+<details>
+	<summary>Answer</summary>
+
+대표적으로 람다와 스트림, Optional, java.time패키지가 추가되었습니다.
+
+스트림 API를 사용하여 데이터에 대한 접근을 공통으로 처리할 수 있고, 람다식을 사용해 함수형 프로그래밍이 가능해져 코드의 재사용성을 높이고, 가독성을 높일 수 있게 되었습니다.
+
+또한 기존의 Calendar클래스의 단점을 보완한 java.time패키지를 통해 날짜 및 시간에 대한 처리를 더욱 손쉽게 사용할 수 있게되었습니다.
+	
+Optional은 NPE(NullPointerException)을 회피하기 위한 일종의 Wrapper클래스로써, 복잡한 조건문 없이 null값으로 인한 예외를 처리할 수 있습니다.
+
+
+</details>
+
+<details>
+	<summary>이해하기</summary>
+
+## Reference
+* [코딩의 시작, TCP School](http://www.tcpschool.com/java/java_intro_java8)
+* [Optional](http://www.tcpschool.com/java/java_stream_optional)
+* [Optional 올바르게 사용하기](https://www.latera.kr/blog/2019-07-02-effective-optional/)
+* [Optional 장단점](https://maivve.tistory.com/332)
+  
+## 내용
+
+### 1. 람다 표현식(Lamda Expression)
+* 익명 함수라고도 부르며, 메소드를 하나의 식으로 표현한 것을 의미.
+* 함수형 프로그래밍이 가능하게 되었고, 그로인해코드의 가독성을 높일 수 있게  되었다는 것이 가장 큰 장점.
+
+### 2. 스트림 API
+* 데이터를 추상화 하여 다루어, 배열이나 컬렉션뿐 아니라 파일에 저장된 데이터 또한 같은 방법으로 다룰 수 있게 해주는 API (with 람다)
+	* 스트림API 이전에 Java에서는 배열, 컬렉션을 이용해 데이터를 저장했다.
+	* 배열, 컬렉션을 다룰 때문제점은 코드의 가독성이 떨어지고, 재사용이 거의 불가능하다는 것.
+	* 또한 데이터베이스 쿼리와 같이 정형화된 처리 패턴을 가지지 못했기 때문에 데이터마다 다른 방법으로 접근해야 했다.
+		* 이건 무슨말이지? 코드가 있으면 더 좋겠다.. 물어보자
+
+### 3. java.time 패키지
+* 기존의 날짜처리 클래스(Calendar)는 몇가지 문제점이 존재했다.
+	* 불변객체가 아니라 수정될 수 있다.
+	* 윤초와 같은 특별한 상황을 고려하지 않는다.
+	* 월(month)가 0 ~ 11로 표현한다.
+* 따라서 대부분 자바 개발자는 Calendar + Jod-Time이라는 라이브러리를 함께 사용했다.
+* java.time패키지에서는 Jodi-Time 라이브러리를 발전시킨 새로운 날짜와 시간에 대한 API를 제공한다.
+	
+### 4. Optional
+* `Optional<T>` 클래스는 T타입의 객체를 포장해주는 Wrapper Class
+*  따라서 Optional 인스턴스는 모든 타입의 참조 변수를 저장할 수 있다.
+* Optional 객체를 통해 NullPointerException을 간단히 회피할 수 있다.
+* [주의!] Optional을 데이터를 Wrapping 하거나 null check과정에서 비용이 발생한다.(자원을 사용해서 연산을 한다.)
+	* 따라서 Optional을 무분별하게 사용하는 것은 성능저하의 원인이 될 수 있다.
+	* 상단 링크 참조
+
+</details>
