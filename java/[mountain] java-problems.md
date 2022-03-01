@@ -455,7 +455,7 @@ Optional은 NPE(NullPointerException)을 회피하기 위한 일종의 Wrapper�
 * `Optional<T>` 클래스는 T타입의 객체를 포장해주는 Wrapper Class
 *  따라서 Optional 인스턴스는 모든 타입의 참조 변수를 저장할 수 있다.
 * Optional 객체를 통해 NullPointerException을 간단히 회피할 수 있다.
-* [주의!] Optional을 데이터를 Wrapping 하거나 null check과정에서 비용이 발생한다.(자원을 사용해서 연산을 한다.)
+* `주의` Optional은 데이터를 Wrapping 하거나 null check과정에서 비용이 발생한다.(자원을 사용해서 연산을 한다.)
 	* 따라서 Optional을 무분별하게 사용하는 것은 성능저하의 원인이 될 수 있다.
 	* 상단 링크 참조
 
