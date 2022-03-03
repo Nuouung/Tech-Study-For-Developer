@@ -66,3 +66,99 @@ java.util.Date의 하위 클래스인 java.sql.Date와 java.util.Date의 이름�
 
 
 또, java.sql.TimeStamp 클래스는 java.util.Date 클래스에 나노초 필드를 더한 클래스인데, Date 타입과 TimeStamp 타입을 함께 쓰면 a.equals(b)가 true여도 b.equals(a)가 false인 경우가 생길 수 있다고 한다. 
+
+
+### 개선책. java.time
+
+자바 8 이후 사용 가능한 java.time
+오픈소스 JodaTime의 영향을 강하게 받아 탄생한 java.time 패키지는 Java8부터 사용이 가능하며 LocalDate, LocalTime, LocalDateTime을 갖는다. 각각의 용도는 아래와 같다.
+
+ 
+
+* LocalDate : 년, 월, 일
+* LocalTime : 시, 분, 초, 나노초
+* LocalDateTime : 년, 월, 일, 시, 분, 초, 나노초
+ 
+
+클래스의 이름에서 유추 가능하듯 LocalDate는 날짜와 관련된 정보를, LocalTime은 시간과 관련된 정보를, LocalDateTime은 날짜와 시간 모두에 관한 정보를 제공한다. 정말 직관적이다!
+
+ 
+
+java.time이 java.util.Date, java.util.Calendar와 다른 가장 큰 차이점은 java.util.* 의 날짜/시간 관련 클래스들이 불변 객체들이 아니었던과는 달리 java.time 내의 클래스들은 불변객체라는 것. java.util.* 의 클래스들 보다 사용하기 훨씬 안전하다. 또한 메소드 체이닝을 지원하기 때문에 코드를 훨씬 깔끔하고 직관적으로 짤 수 있다. 정말 짱!
+
+
+## java 언어의 특징은 무엇입니까?
+
+* 자바 언어의 특징은 첫 번째 객체 지향 프로그래밍,
+* 두 번째 Garbage Collection에 의한 동적 메모리 관리,
+* 세 번째 jvm을 통한 운영체제로부터의 독립적인 성격,
+* 네 번째 멀티스레드 지원,
+* 다섯 번째 동적 로딩 지원입니다.
+
+
+#### OOP (객체 지향 프로그래밍)
+
+* 자바는 객체 지향 프로그래밍 언어입니다.
+* 객체 지향 프로그래밍은 프로그래밍적 요소를 객체라는 모듈로 나누어 각각의 객체에 적절한 역할과 책임을 부가하는 프로그래밍 기법을 의미합니다.
+* 각각의 객체는 자신만의 역할과 책임이 있으며 전체적인 애플리케이션 내에서 서로 다른 객체들이 원활히 협력하는 것이 객체 지향 프로그래밍의 핵심입니다.
+* 객체 지향 프로그래밍의 대표적인 특징은 상속성, 캡슐화, 다형성, 추상화 등이 있습니다. 
+
+
+#### 자동 메모리 관리
+
+* 자바의 JVM(java virtual machine)은 지속적으로 메모리를 감시하며 더 이상 참조되지 않는 동적 메모리를 주기적으로 해제합니다.
+* c나 c++ 같은 보다 오래된 언어들은 이러한 역할을 프로그래머가 직접 수행해야 했기 때문에 메모리 관리에서 비롯되는 stack overflow와 같은 현상들을 일일히 관리해주어야 했습니다.
+* java는 jvm 내의 Garbage Collection을 통해 메모리 관리를 시스템에게 전가할 수 있습니다.
+
+
+
+#### 운영체제로부터 독립적
+
+* java의 jvm은 특정 운영체제 위에서 java 언어를 Byte 코드로 변환합니다.
+* java 언어는 1차적으로 jvm에 의해 해석되며 jvm은 사용하고자 하는 각각의 플랫폼에 따라 다르게 설계가 가능합니다.
+* 즉 java는 운영체제가 아닌 jvm에 종속적입니다.
+* 따라서 java는 특정 플랫폼에 종속적이지 않아 같은 언어로 다양한 운영체제에서 실행이 가능합니다.
+
+
+
+#### 멀티스레드 프로그래밍 가능
+
+* 자바는 하나의 프로그램에서 여러 개의 스레드가 동시에 실행될 수 있는 환경을 지원합니다.
+* C/C++의 언어는 운영체제의 도움을 받아 멀티스레드를 수행하지만 자바는 운영체제의 지원 없이 이와 같은 일이 가능합니다.
+
+
+#### 동적 로딩 지원
+
+* java는 애플리케이션이 실행될 때 모든 객체가 한번에 생성되지 않고 필요한 시점에 클래스를 동적 로딩하여 생성합니다.
+* 동적 로딩의 장점은 애플리케이션이 일부 변경되었을 때 다시 컴파일하지 않아도 된다는 것입니다.
+* 단점은 필요한 순간 그때 그때마다 메모리에서 불러오기 때문에 정적 로딩에 비해 느리다는 것입니다.
+
+
+
+## JVM, JRE, JDK에 대해 설명해주세요.
+
+* JVM, JRE, JDK는 각각 Java Virtual Machine, Java Runtime Environment, Java Development Kit의 약자입니다.
+* 단위가 작은 것부터 JVM < JRE < JDK이며 
+* JVM은 자바 언어를 특정 플랫폼에 맞는 Byte 코드로 변환하고 Garbage Collection을 통해 메모리를 관리하는 역할을 수행합니다.
+* JRE는 JVM이 자바 프로그램을 동작시킬 때 필요한 라이브러리들과 기타 파일들을 가진 작업 환경입니다. JVM의 실행환경이라고 생각할 수 있습니다.
+* JDK는 JRE를 포함한 자바 개발을 위한 javac 등을 가지고 있습니다.
+
+
+## String, StringBuffer, StringBuilder의 차이점에 대해 말해주세요.
+
+* Java의 문자열 관련 클래스는 String, StringBuffer, StringBuilder의 3가지입니다.
+* 각각의 특성은 다음과 같습니다.
+
+
+#### String
+
+* String은 Heap에 저장되는 불변 객체입니다.
+* String은 불편 객체이기 때문에 문자열의 변화가 있을 때 매번 새로운 객체가 만들어진다는 특징이 있습니다.
+
+
+#### StringBuffer와 StringBuilder
+
+* StringBuffer와 StringBuild는 String과는 달리 불변 객체가 아닙니다.
+* StringBuffer는 동기식, StringBuilder는 비동기식입니다.
+* 단순 속도적인 측면만 봤을 때는 StringBuilder가 StringBuffer보다 빠릅니다.
+* 초기 생성 시 Buffer Size를 설정하는데 Buffer Size를 잘못 지정할 경우 성능이 떨어질 수 있습니다.
