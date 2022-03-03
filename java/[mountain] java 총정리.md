@@ -393,14 +393,14 @@ String은 불변 객체이며, String Buffer는 멀티 스레드 환경에서 th
 <details>
 	<summary>예시</summary>
 
-- 니트와 면티는 모두 티셔츠에 속한다.
+- 니트와 면티는 모두 상의에 속한다.
 - 니트와 면티는 모두 `입는다()` 와 `세탁한다()`의 기능을 수행할 수 있다.
 - `입는다()`는 니트든 면티든 그냥 입으면 된다. (공유해서 쓰면 된다.)
 - 면티는 세탁이 가능하지만, 니트는 손빨래를 해야 한다. (각자 재정의해서 쓰면 된다.)
-- 이 때 티셔츠라는 공통사항은 abstract class로 정의하는것이 더 깔끔하다.
+- 이 때 상의라는 상위그룹의 개념은 abstract class로 정의하는것이 더 깔끔하다.
 	
 ``` java
-abstract class 티셔츠 {
+abstract class 상의 {
  
     // Non-abstract methods
     // Having as default implementation
@@ -413,13 +413,13 @@ abstract class 티셔츠 {
     abstract public void 세탁한다();
 }
 ```
-- 만약 빨래방에서 사용하는 티셔츠 객체를 정의한다면 ??
+- 만약 빨래방에서 사용하는 상의 객체를 정의한다면 ??
 - 빨래방에서는 옷을 입을 필요가 없다. 즉, `입는다()`라는 공통의 처리가 불필요하다.
 - 그냥 interface로 정의하는게 더 깔끔하다.
 
 ``` java
 // Interface
-interface 티셔츠 {
+interface 상의 {
     // Abstract method
     void 세탁한다();
 }
