@@ -64,8 +64,9 @@ JVM이란 Java Virtual Machine, 자바 가상 머신의 약자를 따서 줄여 
 ### 1. Class Loader (클래스 로더)
 자바는 동적 로드, 즉 컴파일 타임이 아니라 런타임(바이트 코드를 실행할 때)에 클래스 로드하고 링크하는 특징이 있다. Class Loader가 <span style='color: orange'>RunTime 시점에 클래스를 로딩</span>하게 해주며 클래스의 인스턴스를 생성하거나 static키워드를 사용했을 때 클래스가 로딩된다.
 
-📌 Class Loader의 특징 📌
-**1. 계층구조 (Hierarchical)**
+### 📌 Class Loader의 특징 📌
+
+**<span style='color: #13AC6B'>1. 계층구조 (Hierarchical)</span>**
 Class Loader끼리 부모, 자식관계를 이루어 계층 구조를 형성하며 최상위 클래스 로더는 Bootstrap Class Loader이다. ![](https://images.velog.io/images/tlsrlgkrry/post/3c09125a-e6e8-4513-9523-638e15a1bf2a/image.png)(출처: https://www.ibm.com/developerworks/java/library/j-dclp1/index.html?S_TACT=105AGX02&S_CMP=EDU)
 - <span style='color: orange'>Bootstrap Class Loader </span>
 : 자바 가상 머신이 실행될때 **가장 먼저 실행되는 클래스 로더**로 자바 런타임 코어 클래스를 로드한다. 필요한 클래스를 로드할 수 있게 최소한의 필수 클래스(java.lang.Object, Class, ClassLoader) 만 로드한다.
@@ -80,7 +81,14 @@ Class Loader끼리 부모, 자식관계를 이루어 계층 구조를 형성하�
 - <span style='color: orange'>User-Defined Class Loader</span>
 : 애플리케이션 레벨에서 사용자가 직접 코드 상으로 생성한 클래스 로더이다.
 
-    
+**<span style='color: #13AC6B'>2. 위임모델 (Delegation Model)</span>**
+어떠한 클래스 파일을 로딩할 때, 해당 로딩 요청이 부모 클래스 로더들로 거슬러 올라가 BootstrapClassLoader(최상위 ClassLoader)에 다다른 후 그 밑으로 로딩 요청을 수행 ![](https://images.velog.io/images/tlsrlgkrry/post/41cb7ea3-2dca-40a9-9cb7-1cb518683c3d/image.png)(출처 : https://homoefficio.github.io/2018/10/13/Java-%ED%81%B4%EB%9E%98%EC%8A%A4%EB%A1%9C%EB%8D%94-%ED%9B%91%EC%96%B4%EB%B3%B4%EA%B8%B0/)
+
+**<span style='color: #13AC6B'>3. 언로드 불가 (Unload Impossibility)</span>**
+클래스 로더에 의해 로딩된 클래스들은 JVM 상에서 삭제할 수 없다
+Unloading 기능을 우회적으로 구현하는 방법은 Class를 로드한 Class Loader 자체를 삭제하고,
+새로운 Class Loader를 만들어서 다시 Class를 로드하면, reload 되는 것처럼 작동하는 것이 된다.
+
 
 ### 2. Runtime Data Areas (메모리)
 ![](https://images.velog.io/images/tlsrlgkrry/post/2432c66f-f6f3-4164-aafc-d101f083164d/image.png)(출처: https://d2.naver.com/helloworld/1230)
