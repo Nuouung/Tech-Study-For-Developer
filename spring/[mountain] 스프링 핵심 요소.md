@@ -79,6 +79,84 @@ AOP는 공통 관심사를 메서드 단위로 좀 더 세밀하게 적용해줄
 * afterCompletion 은 항상 호출된다. 
 * 예외가 발생한 경우, 예외( ex )를 파라미터로 받아서 어떤 예외가 발생했는지 로그로 출력할 수 있다. 
 
+</details>
 
+# Q. 스프링에서 하나의 요청이들어 왔을 때 처리과정
+<details>
+	<summary>Answer</summary>
+클라이언트가 HTTP요청을 하면 가장먼저 Front Controller의 역할을 하는 DispatcherServlet이  요청을 받아 처리 합니다.
+
+이 후, 요청을 처리할 수 있는 핸들러 어댑터를 조회하여, 컨트롤러를 호출 하게 되고, ModelAndView 객체를 반환 받습니다.
+
+다음으로 ViewResolver를 통해 View에 대한 정보를 받아온 후, Model의 데이터를 렌더링하여 최종 VIew페이지를 반환해주게 됩니다.
+
+만약 컨트롤러에 ResponsBody의 어노테이션이 추가되어있다면, View 페이지가 아닌 Http 메시지 바디에 직접 응답데이터를 출력하여 반환하게 됩니다.
+</details>
+
+<details>
+	<summary>이해하기</summary>
+
+## Reference
+* [스프링 MVC 1편  - 백엔드 웹 개발 핵심 기술 - 인프런 | 강의](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-1/dashboard)
+  
+## 내용
+
+</details>
+
+# Q. 빈 생명주기
+<details>
+	<summary>Answer</summary>
+
+**스프링 빈의 이벤트 라이프 사이클**
+
+`스프링 컨테이너 생성 -> 스프링 빈 생성 -> 의존관계 주입 -> 초기화 콜백-> 사용 -> 소멸전 콜백-> 스프링 종료`
+
+* 초기화 콜백: 빈이 사용할 수 있는 상태임을 알려줄 수 있다.
+* 소멸전 콜백: 안전하게 작업을 종료할 수 있다.
+
+**빈이 생성되고, 소멸되기 직전에 콜백 메소드가 호출된다.**
+
+
+**빈 스코프**
+* 싱글톤: 기본 스코프, 컨테이너의 시작과 종료까지 유지되는 가장 넓은 범위의 스코프
+* 프로토타입: 빈의 생성과 의존관계 주입까지만 관여, 더는 관리하지 않는다. (매우 짧은 범위)
+* 웹 스코프
+	* request: 웹 요청이 들어오고 나갈때 까지 유지된다.
+	* session: 웹 세션이 생성되고 종료될 때 까지 유지.
+	* application: 웹의 서블릿 컨텍스트와 같은 범위로 유지.
+
+</details>
+
+<details>
+	<summary>이해하기</summary>
+
+## Reference
+* [스프링 MVC 1편  - 백엔드 웹 개발 핵심 기술 - 인프런 | 강의](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-1/dashboard)
+  
+</details>
+
+# Q. @Component, @Service, @Controller @Repository 차이점
+<details>
+	<summary>Answer</summary>
+
+* 스프링은 @Component가 붙은 모든 클래스를 빈으로 등록한다. (스캔 범위 지정 가능.)
+
+* @Controller는 Web MVC에서 사용된다. 클래스 레벨의 @Controller 어노테이션이 존재하는 경우 @RequestMapping을 사용할 수 있다.
+
+* @Service는 내부적으로 @Component를 가지고 있다. 특별한 로직을 수행하지는 않지만 어노테이션을 통해 관점을 분리할 수 있다. (Service는 비즈니스 계층)
+
+* @Repsotiroy는 데이터 접근계층에서 사용되며, 데이터 접근시 발생하는 예외를 스프링 예외로 변환해주는 처리를 해준다.
+
+* @Configuration은 스프링 설정정보로 인식하고, 스프링 빈이 싱글톤을 유지하도록 처리한다.
+
+</details>
+
+<details>
+	<summary>이해하기</summary>
+
+## Reference
+* [스프링 MVC 1편  - 백엔드 웹 개발 핵심 기술 - 인프런 | 강의](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-1/dashboard)
+* [카카오 면접  @Service,@Controller,@Component 차이](https://baek-kim-dev.site/64)
+  
 </details>
 
