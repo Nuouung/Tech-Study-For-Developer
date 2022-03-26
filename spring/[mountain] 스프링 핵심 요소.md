@@ -2,7 +2,10 @@
 <details>
 	<summary>Answer</summary>
 
-* IoC/DI, AOP, PSA
+* IoC(Inversion of Control)
+* DI(Dependency Injection)
+* AOP(Aspect-Oriented-Programming)
+* PSA(Portable-Service-Abstraction)
 
 * 스프링은 IoC를 통해 객체의 생명 주기가 스프링 컨테이너에 의해 관리되기 때문에 DI와 같은 외부 의존성 주입이 가능하고, 이러한 특징은 객체지향을 살린 자바 애플리케이션을 개발을 가능하게 만들어 준다는 장점을 지닙니다. 
 
