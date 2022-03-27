@@ -84,7 +84,7 @@ AOP는 공통 관심사를 메서드 단위로 좀 더 세밀하게 적용해줄
 
 </details>
 
-# Q. 스프링에서 하나의 요청이들어 왔을 때 처리과정
+# Q. 스프링MVC에서 하나의 요청이들어 왔을 때 처리과정
 <details>
 	<summary>Answer</summary>
 클라이언트가 HTTP요청을 하면 가장먼저 Front Controller의 역할을 하는 DispatcherServlet이  요청을 받아 처리 합니다.
