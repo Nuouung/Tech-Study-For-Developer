@@ -220,3 +220,31 @@
 * 따라서 인덱스를 생성시 Clustered, Non Clustered 인덱스를 구분하여 생성하는 것은 중요한 개념
 
 </details>
+
+# Q. SQL DB VS NoSQL DB
+<details>
+	<summary>Answer</summary>
+
+SQL DB는 스키마를 통해 구조적인 데이터를 저장하기 때문에, 데이터 무결성을 보장하고 중복없이 데이터를 저장할 수 있습니다.
+
+반면 NoSQL은 스키마가 존재하지 않아 더욱 유연하게 데이터를 저장할 수 있지만, 중복이 발생할 수 있고, 중복 데이터가 수정되면 모든 컬렉션에서 수행되어야 한다는 단점이 있습니다.
+
+NoSQL은 Scale Out(수평적 확장)이 가능하다는 장점을 지니며, HashMap구조로 저장되어 SQL DB보다 빠른 조회속도를 가집니다.
+
+SQL DB는 데이터간의 관계가 존재하고, 데이터의 변경이 자주 일어나는 경우에 사용하는 것이 좋고, NoSQL DB는 데이터 구조가 명확하지 않고, 변경이 적고 읽기 처리를 자주 하는 경우 좋습니다.
+
+
+</details>
+
+<details>
+	<summary>이해하기</summary>
+
+## Reference
+* [SQL vs NoSQL (MySQL vs. MongoDB)](https://siyoon210.tistory.com/130)
+* [SQL과 NOSQL의 차이 | 👨🏻‍💻 Tech Interview](https://gyoogle.dev/blog/computer-science/data-base/SQL%20&%20NOSQL.html)
+
+  
+## 내용
+
+
+</details>
