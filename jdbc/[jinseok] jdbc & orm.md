@@ -112,7 +112,7 @@
 
 ### N+1 문제를 해결하는 방법
 
-* Join Fetch 사용 <- 두 테이블을 조인해서 한번에 모든 데이터를 가져온다. 페이징 기능을 이용할 수 없다는 단점이 있다.
+* Fetch Join 사용 <- 두 테이블을 조인해서 한번에 모든 데이터를 가져온다. 페이징 기능을 이용할 수 없다는 단점이 있다.
 * @EntityGraph 사용 <- attributePaths를 사용해 조회시 바로 가져올 필드명을 지정할 수 있다. 그러면 Lazy가 아닌 Eager로 조회하게 된다. (참고로 JoinFetch는 inner join, @EntityGraph는 outer join. 카테시안 곱이 발생할 수 있다 <- JPQL에 DISTINCT 키워드를 추가해 중복을 제거하거나 OneToMany 필드를 Set으로 선언해 중복을 제거할 수 있음)
 * @BatchSize 사용 <- 설정한 size만큼의 데이터만 미리 로딩
 
