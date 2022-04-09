@@ -67,27 +67,6 @@ SQL Mapper는 Java코드와 SQL코드를 분리할 수 있고, 복잡한 Join쿼
 
 </details>
 
-
-# Q. 즉시로딩시 발생할 수 있는 문제점
-<details>
-	<summary>Answer</summary>
-
-N + 1 문제가 발생할 수 있다.
-
-N + 1문제란 JAP에서 연관관계 Entity를 `즉시로딩`하는 경우 발생할 수 있는 문제로써, 1개의 쿼리에 나온 N개의 결과만큼 연관관계 테이블을 조회하게되는 경우를 의미.
-
-이러한 경우 지연로딩을 통해, 해당 데이터에 접근하는 시점에 조회할 수 있도록 조치할 수 있다.
-
-</details>
-
-<details>
-	<summary>이해하기</summary>
-
-## Reference
-* [자바 ORM 표준 JPA 프로그래밍 - 기본편 - 인프런 | 강의](https://www.inflearn.com/course/ORM-JPA-Basic/dashboard)
-
-</details>
-
 # Q. 영속성 컨텍스트 ?
 <details>
 	<summary>Answer</summary>
