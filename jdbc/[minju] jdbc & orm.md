@@ -48,7 +48,7 @@ JDBC의 모든 저수준 처리를 스프링 프레임워크에 위임하므로�
 
     1. DB와 바로 연결하는 것보다 초기설정이 더 많아지거나 복잡해 질 수있다.
     2. 모든 것을 ORM을 통해서만 구현하는 것은 힘들다.
-
+---
 ### 4. 영속성 컨텍스트
 영속성 컨텐스트란 엔티티를 영구 저장하는 환경이라는 뜻이다. 애플리케이션과 데이터베이스 사이에서 객체를 보관하는 가상의 데이터베이스 같은 역할을 한다. 엔티티 매니저를 통해 엔티티를 저장하거나 조회하면 엔티티 매니저는 영속성 컨텍스트에 엔티티를 보관하고 관리한다.
 EntityManager가 생성되면 1:1로 영속성 컨텍스트가 생성된다.
@@ -77,3 +77,38 @@ EntityManager를 통해서 영속성 컨텍스트에 접근하고 관리할 수 
     ```java
     em.remove(member);
     ```
+
+### 영속성 컨텍스트의 특징(장점)
+
+#### 1. 1차 캐시
+영속성 컨텍스트 내부에는 캐시가 있는데 이를 1차 캐시라고 한다. 영속 상태의 엔티티를 이곳에 저장한다. 1차 캐시의 키는 식별자 값(데이터베이스의 기본 키)이고 값은 엔티티 인스턴스이다. 
+```java
+// em.find(엔티티 클래스 타입, 식별자 값);
+Member member = em.find(Member.class, "member1");
+```
+
+#### 2. 동일성 보장
+영속 엔티티의 동일성을 보장한다.
+```java
+Member a = entityManager.find(Member.class, "member1");
+Member b = entityManager.find(Member.class, "member1");
+System.out.println(a == b); // 동일성 비교 true
+```
+
+#### 3. 쓰기 지연
+1차 캐시에 저장하는 동시에 쓰기 지연 SQL 저장소에 저장해두고 commit 실행 시 DB에 쿼리를 한번에 보낸다.
+```java
+entityManager.persist(memberA);
+entityManager.persist(memberB);
+// 이때까지 INSERT SQL을 DB에 보내지 않는다.
+
+// 커밋하는 순간 DB에 INSERT SQL을 보낸다.
+transaction.commit(); // Transaction 커밋 
+```
+
+#### 4. 변경 감지
+commit이 호출될 때 현재 엔티티와 캐시 내의 스냅샷을 비교한다. 비교 결과, 변경이 있을 때 수정 쿼리를 생성해서 수정한다.
+변경 감지는 영속성 컨텍스트가 관리하는 영속 상태의 엔티티만 적용된다.
+
+#### 5. 지연 로딩
+프록시 객체를 이용하여 엔티티가 사용되기 전까지 DB 조회를 지연한다.
