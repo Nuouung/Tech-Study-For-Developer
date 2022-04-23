@@ -35,6 +35,25 @@ Web과 Was를 기능에 따라 분리함으로써 자원 이용의 효율성을 
 
 </details>
 
+# Q. Authentication, Authorization ?
+<details>
+	<summary>Answer</summary>
+
+Authentication은 인증, Authorization는 권한을 의미.
+로그인이 성공하면, 등급에 따라 접근할 수 있는 페이지가 결정되는것처럼 인증된 사용자에게 권한을 부여할 수 있다.
+
+
+</details>
+
+<details>
+	<summary>이해하기</summary>
+
+## Reference
+* [비슷해보이지만 다른 두 친구를 소개합니다. Authentication vs Authorization | 아웃풋 트레이닝](https://baek.dev/post/24/)
+
+
+</details>
+
 # Q. Immutable
 <details>
 	<summary>Answer</summary>
