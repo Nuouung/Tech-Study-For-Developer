@@ -52,3 +52,30 @@ Java에서는 대표적으로 String이나 Wrapper클래스들이 모두 불변 
 
 </details>
 
+
+# Q. 캐시 메모리 ?
+<details>
+	<summary>Answer</summary>
+
+캐시 메모리는 속도가  빠른 장치와 느린 장치의 속도 차이에 따른 병목 현상을 줄이기 위한 범용 메모리 입니다.
+메인 메모리에서 자주 사용되는 데이터를 저장하기 위해 지역성을 이용해 예측할 수 있습니다.
+
+</details>
+
+<details>
+	<summary>이해하기</summary>
+
+## Reference
+* [운영체제(OS) 10. 캐시 메모리(Cache Memory)](https://rebro.kr/180)
+* [tech-interview-for-developer/캐시 메모리(Cache Memory).md at master · gyoogle/tech-interview-for-developer · GitHub](https://github.com/gyoogle/tech-interview-for-developer/blob/master/Computer%20Science/Computer%20Architecture/%EC%BA%90%EC%8B%9C%20%EB%A9%94%EB%AA%A8%EB%A6%AC(Cache%20Memory).md)  
+
+## 내용
+
+지역성이란 데이터에 대한 접근이 시간적, 공간적으로 가깝게 발생하는 것을 의미하며 캐시의 적중률을 극대화하여 효율성을 높여준다.
+
+공간적 지역성은 배열, 시간적 지역성은 for나 while같은 반복문을 예시로 들 수 있다.
+
+* 공간 지역성: 최근에 사용한데이터 근처에서 참조될 가능성이 높다.
+* 시간 지역성: 최근에 사용한 데이터가 재참조 될 가능성이 높다.
+
+</details>
